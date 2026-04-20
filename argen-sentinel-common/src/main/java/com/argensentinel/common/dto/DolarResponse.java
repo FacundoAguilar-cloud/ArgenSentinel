@@ -1,6 +1,11 @@
 package com.argensentinel.common.dto;
 
-public record DolarResponse(
+import java.math.BigDecimal;
+import java.time.Instant;
 
+public record DolarResponse(
+    String type,
+    BigDecimal price,
+    Instant timestamp
 ) {
 }
