@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: argen-sentinel-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: api-service
+          uri: http://argen-sentinel-api:8080
+          predicates:
+            - Path=/api/**
+        - id: ingestion-service
+          uri: http://argen-sentinel-ingestion:8081
+          predicates:
+            - Path=/ingestion/**
+
+auth0:
+  issuer: ${AUTH0_ISSUER}
+  audience: ${AUTH0_AUDIENCE}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
