@@ -6,5 +6,7 @@ D:\proyectos Java\argen.sentinel\argen-sentinel-common\src\main\java\com\argense
 D:\proyectos Java\argen.sentinel\argen-sentinel-common\src\main\java\com\argensentinel\common\entity\PriceHistory.java
 D:\proyectos Java\argen.sentinel\argen-sentinel-common\src\main\java\com\argensentinel\common\dto\AlertRequest.java
 D:\proyectos Java\argen.sentinel\argen-sentinel-common\src\main\java\com\argensentinel\common\entity\DolarPrice.java
+D:\proyectos Java\argen.sentinel\argen-sentinel-common\src\main\java\com\argensentinel\common\exception\BadRequestException.java
 D:\proyectos Java\argen.sentinel\argen-sentinel-common\src\main\java\com\argensentinel\common\dto\DolarResponse.java
+D:\proyectos Java\argen.sentinel\argen-sentinel-common\src\main\java\com\argensentinel\common\config\JacksonConfig.java
 D:\proyectos Java\argen.sentinel\argen-sentinel-common\src\main\java\com\argensentinel\common\entity\UserAlert.java

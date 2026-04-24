@@ -1,6 +1,7 @@
 com\argensentinel\common\entity\CryptoPrice$CryptoPriceBuilder.class
 com\argensentinel\common\dto\DolarResponse.class
 com\argensentinel\common\dto\AlertResponse.class
+com\argensentinel\common\exception\BadRequestException.class
 com\argensentinel\common\entity\CryptoPrice.class
 com\argensentinel\common\entity\DolarPrice.class
 com\argensentinel\common\entity\UserAlert.class
@@ -12,5 +13,6 @@ com\argensentinel\common\entity\UserAlert$UserAlertBuilder.class
 com\argensentinel\common\exception\ResourceNotFoundException.class
 com\argensentinel\common\dto\SpreadResponse.class
 com\argensentinel\common\entity\PriceHistory.class
+com\argensentinel\common\config\JacksonConfig.class
 com\argensentinel\common\entity\UserAlert$AlertType.class
 com\argensentinel\common\entity\DolarPrice$DolarType.class
