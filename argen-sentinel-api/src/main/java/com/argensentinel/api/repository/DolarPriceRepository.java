@@ -14,5 +14,5 @@ public interface DolarPriceRepository extends JpaRepository<DolarPrice, Long> {
 
     List<DolarPrice> findByTypeOrderByTimestampDesc(DolarPrice.DolarType type);
 
-    List<DolarPrice> findTopByTypeOrderByTimestampDesc(DolarPrice.DolarType type);
+    Optional<DolarPrice> findTopByTypeOrderByTimestampDesc(DolarPrice.DolarType type);
 }
