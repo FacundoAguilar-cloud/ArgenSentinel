@@ -5,10 +5,12 @@ import com.argensentinel.api.repository.UserAlertRepository;
 import com.argensentinel.common.dto.AlertRequest;
 import com.argensentinel.common.dto.AlertResponse;
 import com.argensentinel.common.entity.UserAlert;
+import com.argensentinel.common.exception.BadRequestException;
 import com.argensentinel.common.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,10 +51,31 @@ public class AlertService {
             userAlertRepository.delete(alert);
         }
 
-    private void validateAferRequest(AlertRequest request){
+    private void validateAlertRequest(AlertRequest request){
+        if(request.symbol() == null || request.symbol().isBlank() ){
+            throw new BadRequestException("Symbol is required");
+
+        }
+        if(request.alertType() == null || request.alertType().isBlank() ){
+            throw new BadRequestException("Alert type is required");
+        }
+        if(request.targetPrice() == null || request.targetPrice().compareTo(String.valueOf(BigDecimal.ZERO)) <= 0){
+            throw new BadRequestException("Target price is required");
+        }
 
 
+    }
 
+    private AlertResponse toAlertResponse(UserAlert alert){
+        return new AlertResponse(
+            alert.getId(),
+            alert.getSymbol(),
+            alert.getType().name(),
+            alert.getTargetPrice(),
+            alert.getActive(),
+            alert.getTriggeredAt(),
+            alert.getCreatedAt()
+        );
     }
 
 
